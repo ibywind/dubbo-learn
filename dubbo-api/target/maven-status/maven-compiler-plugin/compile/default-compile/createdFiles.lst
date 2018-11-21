@@ -1,0 +1,3 @@
+cn\bywind\App.class
+cn\bywind\dubboapi\service\UserService.class
+cn\bywind\dubboapi\model\User.class
