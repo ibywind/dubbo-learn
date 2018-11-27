@@ -9,6 +9,7 @@ import com.alibaba.dubbo.config.annotation.Service;
         application = "${dubbo.application.id}",
         protocol = "${dubbo.protocol.id}",
         registry = "${dubbo.registry.id}"
+
 )
 public class UserServiceImpl implements UserService {
     @Override
