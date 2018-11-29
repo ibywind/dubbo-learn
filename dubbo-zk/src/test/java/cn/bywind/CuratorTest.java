@@ -19,12 +19,19 @@ public class CuratorTest {
         client.start();
         System.out.println("zk client start successfully!");
 
+        try {
+            client.delete().deletingChildrenIfNeeded().withVersion(-1).forPath(ZK_PATH);
+        }catch (Exception e){
+            System.out.println("节点不存在");
+        }
+
+
         /** 2.Client API test*/
         // 2.1 Create node
         String data1 = "hello";
         print("create", ZK_PATH, data1);
         client.create().
-                creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).
+                creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).
                 forPath(ZK_PATH, data1.getBytes());
 
         // 2.2 Get node and data

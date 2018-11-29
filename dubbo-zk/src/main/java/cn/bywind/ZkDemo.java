@@ -14,15 +14,11 @@ public class ZkDemo implements Watcher {
 
     }
 
-
     @Override
     public void process(WatchedEvent event) {
         System.out.println("watcher:"+event.getState());
-
         if (event.getType().equals(Event.EventType.NodeCreated)){
             System.out.println("watcher:node created");
         }
-
-
     }
 }
