@@ -1,6 +1,8 @@
 package cn.bywind.rpc.v_two;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
 
     private String name;
     private Integer age;
